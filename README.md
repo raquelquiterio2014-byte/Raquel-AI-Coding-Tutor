@@ -1,58 +1,23 @@
-# Raquel-AI-Coding-Tutor
-🚀 New AI Project in Development: Raquel AI Coding Tutor  
+# Raquel AI Coding Tutor
 
+Desktop learning project in Python with a CustomTkinter interface, a Gemini-powered conversational assistant. The code is a prototype; it is not a clinical or professional service.
 
+## Run locally
 
-The evolution of one of my personal projects: Raquel AI Coding Tutor, an educational AI agent designed to help students learn programming through practical guidance, code explanations, and interactive problem-solving.
+Use a Python environment with a graphical desktop. From the repository root:
 
-💻 Technologies and Topics Supported:
+```bash
+python -m venv .venv
+python -m pip install -r requirements.txt
+python RaquelTutor2.py
+```
 
-✅ C Programming
+Activate the virtual environment before installing packages if desired. For the AI feature, set `GEMINI_API_KEY` in your operating-system environment. Example in PowerShell: `$env:GEMINI_API_KEY = "your-key"`; in Bash: `export GEMINI_API_KEY="your-key"`. Never commit a real key. Without a key, the interface opens but AI replies indicate that configuration is missing.
 
-✅ Java
+## Scope and verification
 
-✅ Python
+The repo contains a desktop chat interface and prompt/persona logic. Optional `assets/raquel.png` is not included; the interface uses a text fallback or placeholder if absent. The code has been checked for Python syntax; the graphical interface and external API were not run here. API access may incur provider limits or costs.
 
-✅ HTML
+## Next evidence for a portfolio
 
-✅ CSS
-
-✅ JavaScript
-
-✅ Algorithms and Logic
-
-✅ Data Structures
-
-✅ Functions, Arrays, Matrices, Pointers, Structs, and Recursion
-
-✅ Object-Oriented Programming (OOP)
-
-✅ Web Development Fundamentals
-
-🎯 Main Features:
-
-🔹 Solve programming exercises step by step
-
-🔹 Explain code line by line
-
-🔹 Identify and correct coding errors
-
-🔹 Generate personalized practice exercises
-
-🔹 Teach programming concepts in a beginner-friendly way
-
-🔹 Support students in their learning journey
-
-This project combines my interests in Software Development, Artificial Intelligence, Generative AI, LLMs, and AI Agents, while also reinforcing my belief that technology can make learning more accessible and engaging.
-
-As a Systems Analysis and Development student at Fatec Campinas, I see this project as an opportunity to apply theoretical concepts to a real-world educational solution and continue developing practical skills in AI-powered software engineering.
-
-📚 Learning by building.
-
-💡 Experimenting with AI.
-
-🚀 Growing through projects.
-
-
-
-#ArtificialIntelligence #GenerativeAI #AIAgents #LLM #Programming #Python #Java #CProgramming #JavaScript #HTML #CSS #SoftwareDevelopment #ComputerScience #Technology #Innovation #OpenToWork #Fatec #LearningByBuilding
+Add a screenshot or short screen recording of a local run, note your OS and Python version, and describe a concrete interaction. Avoid presenting generated answers as verified facts.
