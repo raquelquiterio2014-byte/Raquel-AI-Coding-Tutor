@@ -9,10 +9,13 @@ import threading
 # GEMINI API
 # =====================================================
 
-API_KEY = ""
+API_KEY = os.getenv("GEMINI_API_KEY", "")
 
-genai.configure(api_key=API_KEY)
-model = genai.GenerativeModel("gemini-2.5-flash")
+if API_KEY:
+    genai.configure(api_key=API_KEY)
+    model = genai.GenerativeModel("gemini-2.5-flash")
+else:
+    model = None
 
 
 # =====================================================
@@ -319,6 +322,8 @@ Use code examples when useful.
 # =====================================================
 
 def ask_ai(message):
+    if model is None:
+        return "Set GEMINI_API_KEY in your environment before using the AI assistant."
     try:
         prompt = create_prompt(message)
         response = model.generate_content(prompt)
@@ -341,17 +346,19 @@ def ask_ai(message):
 # =====================================================
 
 def process_message(message):
-    global is_typing
-
     response = ask_ai(message)
+    app.after(0, lambda: finish_message(response))
 
+
+def finish_message(response):
+    global is_typing
     chat.insert("end", f"Raquel AI:\n{response}\n\n")
     chat.see("end")
-
     send_button.configure(state="normal")
     is_typing = False
 
 
+# =====================================================
 # =====================================================
 # SEND MESSAGE
 # =====================================================
